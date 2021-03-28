@@ -1,17 +1,38 @@
 <template>
 	<div class="intro">
+		<user-registration-popup v-if="togglers.showRegistrationPopup"></user-registration-popup>
 		<img src="@/assets/logo.png" alt="timber-logo" class="logo">
 		<h1 class="intro-title">Добро пожаловать в Timber</h1>
 		<div class="btns">
-			<button class="btn">Зарегистрироваться</button>
+			<button
+				class="btn"
+				@click="togglers.showRegistrationPopup = !togglers.showRegistrationPopup"
+			>
+				Зарегистрироваться
+			</button>
 			<button class="btn">Войти</button>
 		</div>
 	</div>
 </template>
 
 <script>
+import UserRegistrationPopup from "@/components/users/UserRegistrationPopup";
+
 export default {
-	name: "Intro"
+	name: "Intro",
+	components: {
+		UserRegistrationPopup,
+	},
+	data() {
+		return {
+			togglers: {
+				showRegistrationPopup: false
+			}
+		}
+	},
+	methods: {
+
+	}
 }
 </script>
 
