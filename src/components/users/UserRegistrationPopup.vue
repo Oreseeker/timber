@@ -31,7 +31,7 @@ export default {
 		async register() {
 			const res = await this.fetch({
 				method: 'POST',
-				url: 'register/',
+				url: 'api/users/register/',
 				body: {
 					user: this.user
 				}
